@@ -8,6 +8,7 @@ object OrdersSparkSql {
   def main(args: Array[String]) {
     val spark = SparkSession
       .builder
+      .config("spark.master", "local[*]")
       .appName("Orders Spark Sql")
       .getOrCreate()
 

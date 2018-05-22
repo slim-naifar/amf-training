@@ -9,6 +9,7 @@ object OrdersSparkCore {
   def main(args: Array[String]) {
     val spark = SparkSession
       .builder
+      .config("spark.master", "local[*]")
       .appName("Orders Spark Core")
       .getOrCreate()
 

@@ -5,11 +5,11 @@ import org.apache.spark.storage.StorageLevel
 import org.apache.spark.streaming.dstream.DStream
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
-class OrdersSparkStreaming {
+object OrdersSparkStreaming {
 
   def main(args: Array[String]) {
     // Create the context with a 2 second batch size
-    val sparkConf = new SparkConf().setAppName("Orders Spark Streaming")
+    val sparkConf = new SparkConf().setAppName("Orders Spark Streaming").setMaster("local[*]")
     val ssc = new StreamingContext(sparkConf, Seconds(2))
 
     val hostname: String = args(0)
