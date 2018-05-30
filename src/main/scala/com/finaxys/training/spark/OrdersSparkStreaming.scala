@@ -17,5 +17,4 @@ object OrdersSparkStreaming {
 
     val orders : DStream[String]  = ssc.socketTextStream(hostname, port, StorageLevel.MEMORY_AND_DISK_SER)
   }
-
 }
